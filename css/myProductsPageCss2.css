@@ -1,0 +1,76 @@
+.button 
+{
+    background-color: #255625; /* Green */
+    border: none;
+    color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.button:hover
+{
+	background-color: #3e8f3e; /* Green */
+	color: white;
+	border-bottom-color: transparent;
+}
+
+.my-product-title
+{
+	background-color: rgba(0, 0, 0,0.7);
+	min-height: 50px; 
+	border-radius:10px;
+}
+
+.my-col-data
+{
+	background-color: rgba(255, 255, 255,0.7); 	
+	border-radius:10px; 
+	transition: all 1s ease;
+	margin-bottom: 20px;
+}
+
+.my-col-data:hover
+{
+	background-color: rgba(255, 255, 255,1); 
+}
+
+.my-product-top
+{
+	border-radius:10px; 
+	min-height:230px;
+	max-height:230px;
+	margin-bottom: 10px;
+	margin: 0px;
+}
+
+.my-product-bottom
+{
+	background-color: gray;
+	color: white;
+	font-size: 22px;
+	max-height: 40px;
+	min-height: 40px;
+	border-radius: 10px;
+	padding: 5px;
+	text-align: center;
+	margin:0px;
+}
+
+.my-product-top-image
+{
+	min-height:100px;
+	max-height:100px;
+	transition-duration: 1s;
+}
+.my-product-image:hover
+{
+	/* min-height:150px; */
+	/* max-height:150px; */
+}

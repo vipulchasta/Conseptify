@@ -1,0 +1,164 @@
+<?php
+$thankYou="";
+if($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    $sender=$_POST["name"];
+    $senderMobile=$_POST["mobile"];
+    $senderEmail=$_POST["email"];
+    $senderCity=$_POST["city"];
+    $senderEnquiry=$_POST["enquiry"];
+    $recipient="info@conseptify.com";
+    $subject="Enquiry at Conseptify.com";
+
+    $mailBody="Name: $sender\nMobile No.: $senderMobile\nEmail: $senderEmail\nCity: $senderCity\n\n$senderEnquiry";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
+}
+
+?>
+
+<html>
+	<head>
+    	<title> About Us </title>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content=" About Conseptify Semiconductors Pvt. Ltd. ">
+        <meta name="author" content="Conseptify Semiconductors Pvt. Ltd.">
+		
+		<link rel="icon" href="myFaviIco.ico" type="image/gif" sizes="16x16">
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/mySiteCss.css" rel="stylesheet" type="text/css" />
+        <link href="css/myAboutUsCss.css" rel="stylesheet" type="text/css" />
+        
+		
+    </head>
+	<body>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-static-top navbar-fixed-top" role="navigation" style=" border: 0px; background-color: rgba(0,0,0,0.7);">
+            <div class="container" >
+            <div class="navbar-header" >
+                <a href="/"><img class="myLogo" src="images/logo/logo-fix.png" alt="img" /></a>
+                <a href="/"><img class="myLogo" src="images/logo/logo1.png" alt="logo"/></a>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand" href="#" style=" font-size: 25px;color: whitesmoke"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="index.html">Home</a></li>       
+                  <li><a href="about-us.html" style="color:white;">About Us</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Products <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-header" >Digital LED</li>
+                    <li><a href="products" >Digital LED Products</a></li>
+                    <li><a href="downloads/Catlog.pdf" >Download Catlog</a></li>
+                    <li class="dropdown-header" >Smart Home</li>
+                    <li><a href="#" >Smart Home Products</a></li>
+                    <li><a href="#" >Download Catlog</a></li>
+                  </ul>
+                </li>            
+                <li><a href="contact.html" style="color:white;">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+        <br>
+        <br>
+		
+		<br>
+        <div style="background-color: rgba(0, 0, 0,0.7);min-height: 100px;">
+            <div class="container">
+                <h1 style="color: white;">Conseptify LED</h1>
+                <h2 style="color: gray;">About Us</h2>
+            </div>
+        </div>
+		
+		<br>
+        <br>
+        <div class="container">
+            <div class="col-md-9"> 
+                <div class="text-left" style="background-color: white; min-height: 600px; border-radius: 20px; padding: 20px;margin-top: 10px;margin-bottom: 10px;">
+                    <strong style="font-size: 40px;">About Us</strong>
+                    <hr>
+                    <p align="justify">
+                        <b>Conseptify</b> is one of the early starters in Digital LED Technology in India. 
+                        Founded in 2016, it is probably the first company in India to introduce Digital LED Lighting to India. Over the years, Conseptify has improved its products and services to suit Indian conditions and meet customer expectations. With its experience over the past many years, Conseptify today has LED Lighting solutions for an entire range of functional lighting applications.
+                    </p>
+                    <p align="justify">
+                        <b>Conseptify</b> has an in house R&D center approved by DSIR (Department of Scientific and Industrial Research), Govt. of India and complete factory set-up to produce products from Concept to Execution. We maintain the best in class quality standards to offer our customers High Quality energy efficient LED Lighting solutions. We are introducing Smart LED Lighting solutions to give more energy savings to our customers.
+                    </p>
+                    <p align="justify">
+                        As the leading Innovator in the Digital LED lighting Industry, Conseptify has a proven track record of helping you to realize the potential business benefits of LED Lighting Technology.
+                    </p>
+                    <p align="justify">
+                        <b>Conseptify</b> provides the most versatile, best in class and cost effective Digital LED Lighting solutions for various applications.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div style="background-color: white; min-height: 600px; border-radius: 20px; padding: 20px;margin-top: 10px;margin-bottom: 10px;">
+                    <center>
+                        <p style="font-size: 20px;">Quick Enquiry</p>
+                        <hr>
+						<?=$thankYou ?>
+                        <form method="POST" action="about-us.php">
+                            <input class="form-control" type="text" name="name" placeholder="Name">
+                            <br>
+                            <input class="form-control" type="text" name="mobile" placeholder="Mobile No.">
+                            <br>
+                            <input class="form-control" type="text" name="email" placeholder="Email-ID">
+                            <br>
+                            <input class="form-control" type="text" name="city" placeholder="Your City">
+                            <br>
+                            <input class="form-control" style="min-height: 80px;" type="text" name="enquiry" placeholder="Your Enquiry">
+                            <br>
+                            <button type="submit" class="btn-success btn-lg"> Submit </button>
+                        </form>
+                    </center>
+                </div>
+            </div>
+            
+        </div>
+        <br>
+        <div style="background: url(/images/images-row4/3.jpg) no-repeat center center fixed;min-height: 400px;">
+			<div style="background-color: rgba(100, 100, 100,0.5);">
+				<div class="container" style="min-height: 450px;">
+					<center>
+						<br><br><br>
+						<h1 style="color: white;">New E-catalogue <br> choice.</h1> 
+						<br>
+						<p style="color: white;">Browse our digital version of the catalogue.</p>
+						<br>
+						<a href="/downloads/Catlog.pdf"> <button type="button" class="button">Download</button> </a>
+						<br>
+					</center>
+				</div>
+			</div>
+        </div>
+        <br>
+        <br>
+        <div class="navbar-default navbar-bottom" style=" background-color: rgba(0,0,0,0.8);">
+            <div class="container">
+                <div class="">
+                <center>
+                    <h6 style="color:white;"> Conseptify Semiconductors Pvt. Ltd. <br> copyright © reserved 2017 </h6>
+                </center>
+                </div>
+            </div>
+        </div>
+		
+		<!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+		 	
+    </body>
+</html>

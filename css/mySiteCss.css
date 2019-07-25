@@ -1,0 +1,21 @@
+body
+ {
+    background: url(../images/manhattan_at_night-wallpaper-1920x1080.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.nav.navbar-nav.navbar-right li a 
+{
+    font-weight: bold;
+}
+.myLogo
+{
+    max-height: 40px;
+    transition: all 1s ease;
+}
+.myLogo:hover
+{
+    max-height:50px;
+}
